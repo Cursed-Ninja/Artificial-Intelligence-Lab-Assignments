@@ -40,9 +40,9 @@ int main()
             double value = INT_MAX;
             for (int j = 0; j < m; j++)
             {
-                if ((sum[j] + arr[i]) / (v[j].size() + 1) < value)
+                if (abs(v[j][0] - arr[i]) < value)
                 {
-                    value = (sum[j] + arr[i]) / (v[j].size() + 1);
+                    value = abs(v[j][0] - arr[i]);
                     closest = j;
                 }
             }
@@ -55,7 +55,7 @@ int main()
         bool flag = true;
         for (int j = 0; j < m; j++)
         {
-            if (abs(g[j] - v[j][0]) > 0.0001)
+            if (abs(g[j] - v[j][0]) > 0.1)
             {
                 flag = false;
                 break;
@@ -63,7 +63,9 @@ int main()
         }
 
         if (flag)
+        {
             break;
+        }
     }
 
     for (int i = 0; i < m; i++)
