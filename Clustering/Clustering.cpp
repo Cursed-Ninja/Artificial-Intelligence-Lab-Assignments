@@ -66,6 +66,11 @@ int main()
         {
             break;
         }
+
+        for (int i = 0; i < m; i++)
+        {
+            g[i] = v[i][0];
+        }
     }
 
     for (int i = 0; i < m; i++)
